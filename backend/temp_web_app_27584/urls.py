@@ -25,7 +25,7 @@ from drf_yasg import openapi
 urlpatterns = [
     path("", include("home.urls")),
     path("accounts/", include("allauth.urls")),
-    path("modules/", include("modules.urls")),
+    #path("modules/", include("modules.urls")),
     path("api/v1/", include("home.api.v1.urls")),
     path("admin/", admin.site.urls),
     path("users/", include("users.urls", namespace="users")),
@@ -50,7 +50,7 @@ api_info = openapi.Info(
 schema_view = get_schema_view(
     api_info,
     public=True,
-    permission_classes=(permissions.IsAuthenticated,),
+    #permission_classes=(permissions.IsAuthenticated,),
 )
 
 urlpatterns += [
