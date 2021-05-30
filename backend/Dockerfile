@@ -10,10 +10,6 @@ RUN apt-get update \
   && apt-get install -y python3.7-dev python3-pip libpq-dev curl \
   && apt-get clean all \
   && rm -rf /var/lib/apt/lists/*
-  # You can add additional steps to the build by appending commands down here using the
-  # format `&& <command>`. Remember to add a `\` at the end of LOC 12.
-  # WARNING: Changes to this file may cause unexpected behaviors when building the app.
-  # Change it at your own risk.
 
 WORKDIR /opt/webapp
 COPY . .
@@ -25,4 +21,4 @@ RUN adduser --disabled-password --gecos "" django
 USER django
 
 # Run the web server on port $PORT
-CMD waitress-serve --port=$PORT temp_web_app_27584.wsgi:application
+CMD waitress-serve --port=$PORT my_app_19339.wsgi:application
